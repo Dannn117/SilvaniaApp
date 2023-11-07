@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Impuesto</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="contenedorcentrado">
+            <div id="contenedorcentrado1">
+                <div id="contenedorcentrado1form">
+                    <div class="titulo">
+                        Usuario
+                    </div>
+                    <label for="usuario">Nombre del propietario</label>
+                    <input id="usuario" type="text" name="usuario" placeholder="" required>
+
+                    <label for="Direccion">Direccion</label>
+                    <input id="Direccion" type="text" name="Direccion" placeholder="" required>
+                </div>
+            </div>
+
+            <div id="contenedorcentrado1">
+                <div id="contenedorcentrado1form">
+                    <div class="titulo">
+                        Información del recibo
+                    </div>
+                    <table cellspacing="5" >
+                        <tr>
+                            <td>
+                                <label for="Valor_a">Valor del autovaluo</label>
+                                <input id="Valor_a" type="text" name="Valor_a" placeholder="" required>
+
+                                <label for="Tarifa">Tarifa aplicable</label>
+                                <input id="Tarifa" type="text" placeholder="" name="Tarifa" required>
+
+                                <label for="Subtotal">Subtotal</label>
+                                <input id="Subtotal" type="text" placeholder="" name="Subtotal" required>
+
+                                <label for="Impuesto">Impuesto a pagar</label>
+                                <input id="Impuesto" type="text" name="Impuesto" placeholder="" required>
+                            </td>
+
+                            <td> <label for="Valor_d">Valor del descuento</label>
+                                <input id="Valor_d" type="text" placeholder="" name="Valor_d" required>
+
+                                <label for="Total">Total</label>
+                                <input id="Total" type="text" placeholder="" name="Total" required>
+
+                                <label for="Valor_p">Valor a pagar</label>
+                                <input id="Valor_p" type="text" name="Valor_p" placeholder="" required>
+
+                                <button type="submit" title="Pagar" name="Pagar">Pagar</button>
+                                <div class="pie-form">
+                                    <a href="#">Volver</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="/Js/request.js"></script>
+</body>
+
+</html>
