@@ -9,6 +9,7 @@ body {
     background-color: #f4f4f4;
 }
 /* efectos para el contenedor de pantalla completa */
+
 #contenedor {
     display: flex;
     align-items: center;
@@ -156,3 +157,4 @@ body {
 .pie-form a:hover {
     color: #000000;
 }
+

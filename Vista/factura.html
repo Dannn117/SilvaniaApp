@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Invoice Template Design</title>
+	<link rel="stylesheet" type="text/css" href="/Vista/css/factura.css">
+</head>
+<body onload="cargarDatosFactura();">
+
+<section>
+  <div class="invoice">
+    <div class="header">
+      <div class="i_row">
+        <div class="i_logo">
+          <p>Impuesto predial</p>
+        </div>
+        <div class="i_title">
+          <h2>Factura</h2>
+          <p class="p_title text_right fecha">
+            
+          </p>
+        </div>
+      </div>
+      <div class="i_row">
+        <div class="i_number">
+          <p style="font-weight: bold;"> Nro. predial:
+            <span id="numeroPredial" style="font-weight: normal;"></span> 
+          </p>   
+          <p style="font-weight: bold;"> Cod. Catastral:
+            <span id="codigoCatas" style="font-weight: normal;"></span>
+          </p>    
+          <p style="font-weight: bold;"> Propietario:
+            <span id="prop_title" style="font-weight: normal;"></span>
+          </p> <br/>
+          <p class="p_title">FACTURA No: 3452324</p>
+        </div>
+        <div class="i_address text_right">
+          
+          <p class="p_title">
+            Dirección. <br />
+            <span id="direccion">-</span><br />
+            <span>Colombia</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="i_table">
+        <div class="i_table_head">
+          <div class="i_row">
+            <div class="i_col w_15">
+              <p class="p_title">CANT.</p>
+            </div>
+            <div class="i_col w_55">
+              <p class="p_title">DESCRIPCIÓN</p>
+            </div>
+            
+            <div class="i_col w_15">
+              <p class="p_title">AVALÚO</p>
+            </div>
+          </div>
+        </div>
+        <div class="i_table_body">
+          <div class="i_row">
+            <div class="i_col w_15">
+              <p>1</p>
+            </div>
+            <div class="i_col w_55">
+              <p>Pago impuesto</p>
+              <span>Liquidación de impuesto predial del municipio de Silvania.</span>
+            </div>
+            
+            <div class="i_col w_15">
+              <p id="avaluo"></p>
+            </div>
+          </div>
+          <div class="i_row">
+            <div class="i_col w_15">
+              
+            </div>
+            <div class="i_col w_55">
+              
+            </div>
+          </div>
+          <div class="i_row">
+            <div class="i_col w_15">
+            
+            </div>
+            <div class="i_col w_55">
+
+            </div>  
+          </div>
+        </div>
+        <div class="i_table_foot">
+          <div class="i_row">
+            <div class="i_col w_15">
+              <p>Sub Total:</p>
+            </div>
+            <div class="i_col w_55">
+              <p id="subTotal"></p>
+            </div>
+            <div class="i_col w_15"> 
+                <p>Tarifa:</p>
+            </div>
+            <div class="i_col w_15">
+                <p id="tarifaImpuesto"></p>
+            </div>
+          </div>
+          <div class="i_row grand_total_wrap">
+            <div class="i_col w_50">
+                
+            </div>
+            <div class="i_col w_50 grand_total">
+                <p><span>TOTAL:</span>
+                    <span id="total"></span>
+                  </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="i_row">
+        <div class="i_col w_50">
+          <p class="p_title">Métodos de pago</p>
+          <p>Puede acercarse a los puntos de pago autorizados, o realizar el pago de su impuesto directamente en la oficina de la alcaldía.</p>
+        </div>
+        <div class="i_col w_50 text_right">
+          <p class="p_title">Términos y condiciones</p>
+          <p>No olvide que debe estár a paz y salvo antes de realizar el pago del impuesto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/Js/requestFactura.js"></script>
+
+</body>
+</html>

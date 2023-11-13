@@ -14,7 +14,7 @@
     {
      "Vigencia": 2023,
      "codCatastral": "987654321098765",
-     "Direccion": "Carrera 7 # 23-45, Silvania, Cundinamarca",
+     "direccion": "Carrera 7 # 23-45, Silvania, Cundinamarca",
      "numPredial": "543210-00",
      "Propietario": "María García",
      "Avaluo": 380000000,
@@ -25,7 +25,7 @@
     {
      "Vigencia": 2023,
      "codCatastral": "123456789012345",
-     "direccion": "AvencodCatastrala 19 # 34-56, Silvania, Cundinamarca",
+     "direccion": "Avenida 19 # 34-56, Silvania, Cundinamarca",
      "numPredial": "789456-00",
      "Propietario": "José González",
      "Avaluo": 150000000,

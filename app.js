@@ -1,8 +1,27 @@
+require('dotenv').config()
+
 const express = require('express');
-const { stringify } = require('querystring');
+const bodyParser = require('body-parser');
+const { databaseService } = require('./services/databaseService');
+
 const app = express();
 
-app.use(express.json());
+app.use(bodyParser.json());
+
+const dbService = databaseService();
+require('./routes')(app, dbService);
+
+//Control de error
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions)) // Use this after the variable declaration
+//--------------
+
 
 const predios = [
 
@@ -31,7 +50,7 @@ const predios = [
     {
      "Vigencia": 2023,
      "codCatastral": "123456789012345",
-     "direccion": "AvencodCatastrala 19 # 34-56, Silvania, Cundinamarca",
+     "direccion": "Avenidaa 19 # 34-56, Silvania, Cundinamarca",
      "numPredial": "789456-00",
      "Propietario": "José González",
      "Avaluo": 150000000,
@@ -74,7 +93,7 @@ const predios = [
     },
     {
      "Vigencia": 2023,
-     "codCatastral": "87654321098765",
+     "codCatastral": "47654321098765",
      "direccion": "Carrera 60 # 30-40, Silvania, Cundinamarca",
      "numPredial": "300403-00",
      "Propietario": "Juan Gómez",
@@ -86,7 +105,7 @@ const predios = [
     {
      "Vigencia": 2023,
      "codCatastral": "1234567890123",
-     "direccion": "AvencodCatastrala 20 # 70-80, Silvania, Cundinamarca",
+     "direccion": "Avenida 20 # 70-80, Silvania, Cundinamarca",
      "numPredial": "700807-00",
      "Propietario": "José Sánchez",
      "Avaluo": 90000000,
@@ -118,44 +137,44 @@ const predios = [
     }
    ]
 
-app.get('/', (req, res) => {
-    res.send('Registro de predios');
-});
 
-app.get('/api/predios', (req, res) => {
-    res.send(predios);
-});
 
-app.get('/api/predios/:codCatastral', (req, res) =>{
-    const predio = predios.find(c => c.codCatastral === req.params.codCatastral);
-    if (!predio) return res.status(404).send('Predio no encontrado...');
-    else res.send(predio);
-});
+// app.get('/api/predios', (req, res) => {
+//     res.send(predios);
+// });
 
-app.post('/api/predios', (req, res) => {
-    const predio = {
-        Vigencia: "2023",
-        codCatastral: req.body.codCatastral,
-        direccion: req.body.direccion,
-        numPredial: req.body.numPredial,
-        Propietario: req.body.Propietario,
-        Avaluo: req.body.Avaluo,
-        Estrato: req.body.Estrato,
-        Departamento: "Cundinamarca",
-        Ciudad: "Silvania"
-    }
-    predios.push(predio);
-    res.send(predio);
-});
+// app.get('/api/predios/:codCatastral', (req, res) =>{
+//     const predio = predios.find(c => c.codCatastral === req.params.codCatastral);
+//     if (!predio) return res.status(404).send('Predio no encontrado...');
+//     else res.send(predio);
+// });
 
-app.delete('/api/predios/:codCatastral', (req, res) => {
-    const predio = predios.find(c => c.codCatastral === parseInt(req.params.codCatastral));
-    if (!predio) return res.status(404).send('Predio no encontrado');
 
-    const index = predios.indexOf(predio);
-    predios.splice(index, 1);
-    res.send(predio);
-});
+
+// app.post('/api/predios', (req, res) => {
+//     const predio = {
+//         Vigencia: "2023",
+//         codCatastral: req.body.codCatastral,
+//         direccion: req.body.direccion,
+//         numPredial: req.body.numPredial,
+//         Propietario: req.body.Propietario,
+//         Avaluo: req.body.Avaluo,
+//         Estrato: req.body.Estrato,
+//         Departamento: "Cundinamarca",
+//         Ciudad: "Silvania"
+//     }
+//     predios.push(predio);
+//     res.send(predio);
+// });
+
+// app.delete('/api/predios/:codCatastral', (req, res) => {
+//     const predio = predios.find(c => c.codCatastral === parseInt(req.params.codCatastral));
+//     if (!predio) return res.status(404).send('Predio no encontrado');
+
+//     const index = predios.indexOf(predio);
+//     predios.splice(index, 1);
+//     res.send(predio);
+// });
 
 const port = process.env.port || 80;
 app.listen(port, () => console.log(`Escuchando en puerto ${port}...`)); 
