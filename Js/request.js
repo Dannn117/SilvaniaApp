@@ -8,6 +8,7 @@ function cargarPredios(e){
         const codigoCatastral = document.getElementById("Codigo").value;
         // console.log(codigoCatastral);
 
+
         localStorage.setItem('codigoGuardado', codigoCatastral);
             // Redirigir a la otra página
             window.location.href = 'perfil.html';

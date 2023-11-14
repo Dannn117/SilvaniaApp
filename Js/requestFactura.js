@@ -6,7 +6,7 @@ function cargarDatosFactura(){
     console.log(codigoCatastral);
 
      // Función para cargar el Json
-     fetch("http://localhost:80/api/predios/")
+     fetch("/Datos-catastro.json")
      .then(respuesta => respuesta.json())
      .then((usuarios) => {
 

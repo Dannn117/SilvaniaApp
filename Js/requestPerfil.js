@@ -1,5 +1,4 @@
 
-
 //Cargar los datos en el formulario "perfil"
 function cargarDatos(){
        
@@ -8,7 +7,7 @@ function cargarDatos(){
         console.log(codigoCatastral);
 
          // Función para cargar el Json
-         fetch("http://localhost:80/api/predios")
+         fetch("/Datos-catastro.json")
          .then(respuesta => respuesta.json())
          .then((usuarios) => {
  
@@ -17,7 +16,7 @@ function cargarDatos(){
  
            // Obtenemos el objeto JSON
            const objetoJSON = usuario;
- 
+
            // Se imprimen los datos
            document.getElementById("usuario").placeholder = objetoJSON.Propietario;
            document.getElementById("Direccion").placeholder = objetoJSON.direccion;
